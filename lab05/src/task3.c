@@ -1,23 +1,20 @@
 //Визначити, чи є ціле 6-ти значне число "щасливим" квитком
 int main()
 {
-	#define NUM 111111
-	//
-	int count = NUM; //
-	int first_part = 0; //
-	int second_part = 0; //
-	int X = count;
+	int num = 111112;
+	int first_part = 0;
+	int second_part = 0;
 	float result;
 
-	while (count / 1000 > 0){
-		first_part += count%10;
-		count /= 10;
+	while (num / 1000){ //Відокремлюємо першу частину
+		first_part += num % 10;
+		num /= 10;
 	}
-	while (X > 0){
-		second_part += X%10;
-		X /= 10;
+	while (num % 1000){ //Відокремлюємо другу частину
+		second_part += num % 10;
+		num /= 10;
 	}
-	if (first_part == second_part){
+	if (first_part == second_part){ //Прирівнюємо
 		 result = 1;
 	}
 	else{

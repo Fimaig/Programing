@@ -1,7 +1,7 @@
 //Визначити чи є задане число досконалим
 int main()
 {
-	int num = 6;
+	int num = 5;
 	int sum = 0;
 	float result;
 
