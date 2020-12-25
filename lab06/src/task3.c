@@ -4,7 +4,7 @@ int main(){
 	#define WIDTH 20
 
 	char result[HEIGHT][WIDTH];
-	int num = 1234;
+	int num = 9999;
 
 	for (int i = 0; i < 20; i++){
 		result[i][i] = ' ';
