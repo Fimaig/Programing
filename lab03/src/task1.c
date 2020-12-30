@@ -1,5 +1,7 @@
 int main()
 {
+	int res;
+	res = ((8 - 1) % 11) + 1;
 //Перше завдання
 #define RESISTOR1 2.2 //1 опір
 #define RESISTOR2 5.3 //2 опір
