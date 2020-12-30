@@ -1,28 +1,33 @@
-#include <stdarg.h>
-#define SIZE 7
-
-int function (int numbers, ... );
-
+#include <stdlib.h>
+#define N 4
+int function(int arr[N][N]);
 int main()
 {
-    	int result = function(SIZE, 3, 9, 3, 9, 1, 1, 4);
-    	return 0;
-}
-
-int function (int numbers, ... )
-{
-	int result = 0;
-	va_list factor;
-	va_start(factor, numbers);
-	int tmp1 = va_arg(factor, int);
-	for (int i = 0; i < SIZE; i++){
-		int tmp2 = va_arg(factor, int);
-		if (tmp1 < tmp2) {
-		    result += 1;
+	srand(time(NULL));
+	int arr[N][N] ={0};
+	int res[N][N] = {0};
+	for (int i = 0; i < N; i ++)
+	{
+		for (int j = 0; j < N; j ++)
+		{
+			arr[i][j] = rand() % 10;
 		}
-		tmp1 = tmp2;
 	}
-	    
-	va_end(factor);
-    	return result;
+	res[N][N] = function(arr);
+	return 0;
+}
+int function(int arr[N][N])
+{
+  	int arr_res[N][N] = {0};
+	for(int i = 0; i < N; i++)
+	{
+		for(int j = 0; j < N; j++)
+		{
+			for(int k = 0; k < N; k++)
+			{
+				arr_res[i][j] += arr[i][k]*arr[k][j];
+			}
+		}
+	}
+	return arr_res[N][N];
 }
