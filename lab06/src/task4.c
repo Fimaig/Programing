@@ -1,5 +1,4 @@
 //Знайти кількість слів за умови, що між ними може бути будь-яка кількість пропусків
-#include <string.h>
 int main(){
 	#define LENGHT 26
 
@@ -14,6 +13,5 @@ int main(){
 		}
 	}
 	if (arr[LENGHT - 1] != ' ') count++;
-	printf("%d\n", count);
 	return 0;
 }
