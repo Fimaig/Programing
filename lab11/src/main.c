@@ -1,0 +1,44 @@
+#include <malloc.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include "lib.h"
+/**
+ *@file main.c. 
+ *@brief Скласти масив та упорядкувати його за зростанням .  
+ *@author Єфімчук Ігор Денисович.
+ *@date 30-dec-2020.
+ *version 1.0.
+*/
+
+/**
+ *@param  mas1 - перший заданий масив;
+ *@param  mas2 - другий заданий масив;
+ *@param  mas3 - результуючий масив;
+ *@param  N - розмір 1-го масиву;
+ *@param  M - розмір 2-го масиву;
+ */
+
+
+#define N 3
+#define M 4
+
+/**
+ *Функція main : задає розміри масивів та викликає функції
+ */
+int main (){
+	//int mas1[N] = {0};
+	//int mas2[M] = {0};
+	//int mas3[N+M] = {0};
+	
+	int *mas1 = (int*)malloc(N * sizeof(int));
+	int *mas2 = (int*)malloc(M * sizeof(int));
+	int *mas3 = (int*)malloc(N+M * sizeof(int));
+	
+	fill_mas(mas1,mas2,N,M);
+	fill_mas3(mas1,mas2,N,M,mas3);
+	sort_mas3(N,M, mas3);
+	free(mas1);
+	free(mas2);
+	free(mas3);
+	return 0;
+}
